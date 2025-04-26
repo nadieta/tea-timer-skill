@@ -3,7 +3,7 @@
   "profiles": {
     "default": {
       "skillMetadata": {
-        "src": "."
+        "src": "skill-package"
       },
       "code": {
         "default": {
@@ -11,7 +11,7 @@
         }
       },
       "skillInfrastructure": {
-        "type": "lambda",
+        "type": "@ask-cli/lambda-deployer",
         "userConfig": {
           "runtime": "nodejs14.x",
           "handler": "index.handler",
@@ -20,4 +20,4 @@
       }
     }
   }
-}
+} 
