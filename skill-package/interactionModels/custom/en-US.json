@@ -1,0 +1,260 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "tea timer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "StartTimerIntent",
+          "slots": [
+            {
+              "name": "minutes",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{minutes}",
+                "{minutes} minutes",
+                "{minutes} minute"
+              ]
+            },
+            {
+              "name": "displayType",
+              "type": "DisplayType",
+              "samples": [
+                "display {displayType}",
+                "with {displayType} display",
+                "using {displayType} display",
+                "{displayType} display"
+              ]
+            },
+            {
+              "name": "alarmMode",
+              "type": "AlarmMode",
+              "samples": [
+                "alarm mode {alarmMode}",
+                "with {alarmMode} alarm",
+                "using {alarmMode} alarm",
+                "{alarmMode} alarm mode"
+              ]
+            }
+          ],
+          "samples": [
+            "create a {minutes} minute timer",
+            "set a {minutes} minute timer",
+            "start a {minutes} minute timer",
+            "create a timer for {minutes} minutes",
+            "set a timer for {minutes} minutes",
+            "start a timer for {minutes} minutes",
+            "create a {minutes} minute timer with {displayType} display",
+            "set a {minutes} minute timer with {displayType} display",
+            "start a {minutes} minute timer with {displayType} display",
+            "create a {minutes} minute timer using {displayType} display",
+            "set a {minutes} minute timer using {displayType} display",
+            "start a {minutes} minute timer using {displayType} display",
+            "create a timer for {minutes} minutes with {displayType} display",
+            "set a timer for {minutes} minutes with {displayType} display",
+            "start a timer for {minutes} minutes with {displayType} display",
+            "create a timer for {minutes} minutes using {displayType} display",
+            "set a timer for {minutes} minutes using {displayType} display",
+            "start a timer for {minutes} minutes using {displayType} display",
+            "create a {minutes} minute timer with {alarmMode} alarm mode",
+            "set a {minutes} minute timer with {alarmMode} alarm mode",
+            "start a {minutes} minute timer with {alarmMode} alarm mode",
+            "create a timer for {minutes} minutes with {alarmMode} alarm mode",
+            "set a timer for {minutes} minutes with {alarmMode} alarm mode",
+            "start a timer for {minutes} minutes with {alarmMode} alarm mode"
+          ]
+        },
+        {
+          "name": "PauseTimerIntent",
+          "slots": [],
+          "samples": [
+            "pause timer",
+            "pause the timer",
+            "stop timer",
+            "stop the timer",
+            "freeze timer",
+            "freeze the timer",
+            "hold timer",
+            "hold the timer"
+          ]
+        },
+        {
+          "name": "ResumeTimerIntent",
+          "slots": [],
+          "samples": [
+            "resume timer",
+            "resume the timer",
+            "continue timer",
+            "continue the timer",
+            "start timer again",
+            "restart timer",
+            "restart the timer",
+            "unpause timer",
+            "unpause the timer"
+          ]
+        },
+        {
+          "name": "CancelTimerIntent",
+          "slots": [],
+          "samples": [
+            "cancel timer",
+            "cancel the timer",
+            "abort timer",
+            "abort the timer",
+            "terminate timer",
+            "terminate the timer",
+            "delete timer",
+            "delete the timer",
+            "reset timer",
+            "reset the timer"
+          ]
+        },
+        {
+          "name": "ChangeDisplayIntent",
+          "slots": [
+            {
+              "name": "displayType",
+              "type": "DisplayType"
+            }
+          ],
+          "samples": [
+            "change display to {displayType}",
+            "change the display to {displayType}",
+            "switch display to {displayType}",
+            "switch the display to {displayType}",
+            "use {displayType} display",
+            "show {displayType} display",
+            "display {displayType}",
+            "set display to {displayType}",
+            "set the display to {displayType}"
+          ]
+        },
+        {
+          "name": "ChangeAlarmModeIntent",
+          "slots": [
+            {
+              "name": "alarmMode",
+              "type": "AlarmMode"
+            }
+          ],
+          "samples": [
+            "change alarm mode to {alarmMode}",
+            "change the alarm mode to {alarmMode}",
+            "switch alarm mode to {alarmMode}",
+            "switch the alarm mode to {alarmMode}",
+            "use {alarmMode} alarm mode",
+            "set alarm mode to {alarmMode}",
+            "set the alarm mode to {alarmMode}",
+            "set alarm to {alarmMode} only",
+            "set alarm to {alarmMode}"
+          ]
+        },
+        {
+          "name": "CheckTimerIntent",
+          "slots": [],
+          "samples": [
+            "how much time is left",
+            "how much time remains",
+            "how many minutes left",
+            "how many minutes remaining",
+            "how much longer",
+            "check timer",
+            "check the timer",
+            "status of timer",
+            "status of the timer",
+            "time left",
+            "time remaining"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "DisplayType",
+          "values": [
+            {
+              "name": {
+                "value": "hourglass",
+                "synonyms": [
+                  "hour glass",
+                  "sand timer",
+                  "sand glass"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "progress",
+                "synonyms": [
+                  "progress bar",
+                  "bar",
+                  "progress meter"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "teacup",
+                "synonyms": [
+                  "tea cup",
+                  "cup",
+                  "mug",
+                  "tea",
+                  "tea mug"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "AlarmMode",
+          "values": [
+            {
+              "name": {
+                "value": "visual",
+                "synonyms": [
+                  "display",
+                  "screen",
+                  "visible",
+                  "silent"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sound",
+                "synonyms": [
+                  "audio",
+                  "beep",
+                  "alarm",
+                  "noise"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "both",
+                "synonyms": [
+                  "visual and sound",
+                  "sound and visual",
+                  "all",
+                  "everything"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+} 
