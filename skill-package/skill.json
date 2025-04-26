@@ -16,7 +16,9 @@
             "brewing"
           ],
           "name": "Tea Timer",
-          "description": "Tea Timer helps you brew the perfect cup of tea by providing a customizable timer specifically designed for Echo Show devices. Set a timer between 1 and 60 minutes, choose from different visual displays (teacup, hourglass, or progress bar), and get notified when your tea is ready. You can pause, resume, or cancel the timer at any time, and customize the alarm mode. The visual display updates in real-time, showing you the remaining time and a pixel art visualization of your timer's progress."
+          "description": "Tea Timer helps you brew the perfect cup of tea by providing a customizable timer specifically designed for Echo Show devices. Set a timer between 1 and 60 minutes, choose from different visual displays (teacup, hourglass, or progress bar), and get notified when your tea is ready. You can pause, resume, or cancel the timer at any time, and customize the alarm mode. The visual display updates in real-time, showing you the remaining time and a pixel art visualization of your timer's progress.",
+          "smallIconUri": "file://assets/images/icon_108.png",
+          "largeIconUri": "file://assets/images/icon_512.png"
         }
       },
       "isAvailableWorldwide": true,
