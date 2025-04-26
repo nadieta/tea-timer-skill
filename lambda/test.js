@@ -10,18 +10,6 @@
 
 const { handler } = require('./index');
 
-// Mock context object
-const context = {
-  succeed: function(result) {
-    console.log(JSON.stringify(result, null, 2));
-    process.exit(0);
-  },
-  fail: function(error) {
-    console.error(error);
-    process.exit(1);
-  }
-};
-
 // Get the request type from command line args
 const requestType = process.argv[2] || 'LaunchRequest';
 
@@ -287,6 +275,16 @@ if (!requestTemplate) {
   process.exit(1);
 }
 
-// Call the handler
+// Modern ASK SDK uses promises instead of context object
 console.log(`Testing ${requestType}...`);
-handler(requestTemplate, context); 
+
+// Call the handler with a promise-based approach
+(async () => {
+  try {
+    const response = await handler(requestTemplate);
+    console.log(JSON.stringify(response, null, 2));
+  } catch (error) {
+    console.error('Error handling request:', error);
+    process.exit(1);
+  }
+})(); 
