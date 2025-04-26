@@ -26,6 +26,9 @@
     },
     "apis": {
       "custom": {
+        "endpoint": {
+          "uri": "https://tea-timer-alexa-skill.s3-eu-west-1.amazonaws.com/lambda/index.js"
+        },
         "interfaces": [
           {
             "type": "ALEXA_PRESENTATION_APL"
