@@ -47,5 +47,5 @@ Thumbs.db
 # Alexa Skill deployment files
 lambda/node_modules/
 .deploy/
-ask-resources.json
+# ask-resources.json - Uncommented to allow this file for ASK CLI v2
 lambda/package-lock.json 

@@ -8,7 +8,7 @@
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "arn:aws:lambda:us-east-1:XXXXXXXXXXXX:function:tea-timer-skill"
+                "uri": ""
               }
             }
           }
