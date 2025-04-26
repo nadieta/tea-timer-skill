@@ -20,32 +20,15 @@
           "slots": [
             {
               "name": "minutes",
-              "type": "AMAZON.NUMBER",
-              "samples": [
-                "{minutes}",
-                "{minutes} minutes",
-                "{minutes} minute"
-              ]
+              "type": "AMAZON.NUMBER"
             },
             {
               "name": "displayType",
-              "type": "DisplayType",
-              "samples": [
-                "display {displayType}",
-                "with {displayType} display",
-                "using {displayType} display",
-                "{displayType} display"
-              ]
+              "type": "DisplayType"
             },
             {
               "name": "alarmMode",
-              "type": "AlarmMode",
-              "samples": [
-                "alarm mode {alarmMode}",
-                "with {alarmMode} alarm",
-                "using {alarmMode} alarm",
-                "{alarmMode} alarm mode"
-              ]
+              "type": "AlarmMode"
             }
           ],
           "samples": [
