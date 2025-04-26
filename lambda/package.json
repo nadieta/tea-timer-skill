@@ -1,0 +1,27 @@
+{
+  "name": "tea-timer-skill",
+  "version": "1.0.0",
+  "description": "Tea Timer Alexa Skill for Echo Show devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js LaunchRequest",
+    "test:start": "node test.js StartTimerIntent",
+    "test:pause": "node test.js PauseTimerIntent",
+    "test:check": "node test.js CheckTimerIntent",
+    "test:display": "node test.js ChangeDisplayIntent"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "tea",
+    "timer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk-core": "^2.12.1",
+    "ask-sdk-model": "^1.36.1",
+    "ask-sdk-s3-persistence-adapter": "^2.12.1",
+    "aws-sdk": "^2.1038.0"
+  }
+} 

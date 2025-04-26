@@ -1,0 +1,40 @@
+{
+  "profiles": {
+    "default": {
+      "skill_id": "",
+      "was_cloned": false,
+      "merge": {
+        "manifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "arn:aws:lambda:us-east-1:XXXXXXXXXXXX:function:tea-timer-skill"
+              }
+            }
+          }
+        }
+      },
+      "resources": {
+        "manifest": {
+          "eTag": ""
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": ""
+          }
+        },
+        "lambda": [
+          {
+            "arn": "",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda",
+            "functionName": "tea-timer-skill",
+            "handler": "index.handler",
+            "runtime": "nodejs14.x",
+            "revisionId": ""
+          }
+        ]
+      }
+    }
+  }
+} 
