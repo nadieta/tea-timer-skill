@@ -1,25 +1,27 @@
-# Tea Timer Alexa Skill
+# TEA Timer Alexa Skill
 
-An Alexa Skill for Echo Show devices that allows you to set timers for brewing tea with visual feedback.
+An Alexa Skill for Echo Show devices that helps with time awareness through customizable visual displays and audio notifications.
+
+In Spanish speaking countries, TEA is the acronym for ASD. Neurodivergent folks can sometimes struggle to keep a reference of time and transition trough activities. I created this tool to help my daughter keep track of time through images and enable her to be more autonomous while anticipating change.
 
 ## Features
 
-- Create a new timer (between 1 and 60 minutes of duration)
-- Pause the timer
-- Resume the timer
-- Cancel the timer
-- Choose alarm mode (sound + visual or visual only)
-- Choose display type (hourglass, progress bar, or teacup)
-- Visual pixel art display that changes as the timer progresses
-- Countdown display in MM:SS format
+- Set visual timers from 1 to 60 minutes
+- Pause, resume, and cancel timers
+- Continuous on-screen countdown plus progress image
+- Choose from three visual display types (hourglass, progress bar, or teacup)
+- Customize alarm notification modes (sound, visual, or both)
+- Responsive pixel art displays that animate as time progresses
+- Digital countdown in MM:SS format
+- Persistent user preferences between sessions
 
 ## Display Types
 
-The skill offers three different display types:
+The skill offers three different visual experiences:
 
-1. **Teacup** - A pixel art teacup that fills up as the timer progresses
-2. **Hourglass** - A pixel art hourglass that empties from top to bottom
-3. **Progress Bar** - A simple progress bar that fills as the timer progresses
+1. **Teacup** - A pixel art teacup that gradually fills with tea as time progresses
+2. **Hourglass** - A traditional hourglass where sand flows from top to bottom
+3. **Progress Bar** - A simple linear progress indicator
 
 ## Usage Examples
 
@@ -33,30 +35,101 @@ The skill offers three different display types:
 
 ## Project Structure
 
-- `/lambda` - AWS Lambda function code for the skill
-- `/lambda/utils` - Utility functions and constants
-- `/models` - Interaction models for the skill
+- `/lambda` - AWS Lambda function code for the skill backend
+- `/lambda/utils` - Utility functions, constants, and display templates
+- `/models` - Voice interaction models for different languages
+- `/skill-package` - Skill manifest and assets for submission
+- `/skill-package/assets/images` - Skill icons for the Alexa Skill Store
 
-## Development
+## Development Setup
 
 ### Prerequisites
 
-- Node.js 12.x or higher
+- Node.js 14.x or higher
+- npm (Node Package Manager)
 - An Amazon Developer account
-- AWS account for Lambda function deployment
+- AWS account with Lambda permissions
+- ASK CLI (Alexa Skills Kit Command Line Interface)
 
-### Setup
+### Local Development
 
-1. Install dependencies:
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/tea-timer-skill.git
+cd tea-timer-skill
+```
+
+2. Install dependencies:
 ```bash
 cd lambda
 npm install
+cd ..
 ```
 
-2. Deploy the skill using the ASK CLI or manually through the Alexa Developer Console.
+3. Test the skill locally:
+```bash
+cd lambda
+npm test
+```
 
-## Implementation Notes
+## Deployment
 
-- The skill uses Alexa Presentation Language (APL) for visual display on Echo Show devices
-- Timer persistence is managed using the S3PersistenceAdapter
-- Pixel art displays are dynamically generated based on timer progress 
+### Using the Deployment Scripts
+
+The project includes two deployment scripts:
+
+1. **Quick Deploy (for updates to existing skill):**
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+2. **First-Time Setup and Deploy:**
+```bash
+chmod +x setup-and-deploy.sh
+./setup-and-deploy.sh
+```
+This script will:
+- Install the ASK CLI if needed
+- Guide you through AWS authentication
+- Update configuration files with your Lambda ARN if you have an existing function
+- Deploy both the interaction model and Lambda code
+
+### Manual Deployment
+
+1. Install the ASK CLI:
+```bash
+npm install -g ask-cli
+ask init
+```
+
+2. Deploy the skill:
+```bash
+ask deploy
+```
+
+## Testing
+
+The Lambda directory includes several test scripts:
+
+```bash
+# Test basic launch
+npm test
+
+# Test specific intents
+npm run test:start
+npm run test:pause
+npm run test:check
+npm run test:display
+```
+
+## Troubleshooting
+
+- **ASK CLI Authentication Issues**: Ensure you've completed the authentication process with `ask init`
+- **Lambda Deployment Failures**: Check that your AWS credentials are properly configured
+- **Skill Not Responding**: Verify the Lambda function has the correct permissions for the Alexa Skills Kit trigger
+- **Missing Visual Elements**: Ensure your Echo device supports APL (Alexa Presentation Language)
+
+## License
+
+ISC License 
